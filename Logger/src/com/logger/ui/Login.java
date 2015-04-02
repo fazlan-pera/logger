@@ -1,6 +1,7 @@
 package com.logger.ui;
 
 import java.awt.EventQueue;
+import java.awt.Window;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -23,8 +24,10 @@ import java.util.Arrays;
 import javax.swing.JPasswordField;
 
 import com.logger.db.DbResult;
+import com.logger.driver.XMLParser;
 import com.logger.hash.HashComparator;
 import com.logger.hash.HashGenerator;
+
 
 @SuppressWarnings("serial")
 public class Login extends JFrame {
@@ -102,11 +105,27 @@ public class Login extends JFrame {
 					while(db.getRes().next()){
 						hash2Str = db.getRes().getString("password");
 					}
-					System.out.println(Arrays.toString(hash1));
 					HashComparator hashComp = new HashComparator(Arrays.toString(hash1), hash2Str);
 				    boolean cond =	hashComp.compareHash();
-					if(cond){
-						
+					if(cond){ // login successful
+						XMLParser xml = new XMLParser();
+						xml.readFile();
+						String packName = xml.getPack();
+						String uiName = xml.getUi();					
+						String fullName = packName + "." + uiName;
+						Object obj = null;
+						Class classDefinition = Class.forName(fullName);
+				        try {
+							obj = classDefinition.newInstance();
+							((Window) obj).setVisible(true);
+						} catch (InstantiationException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IllegalAccessException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					
 					}
 					else{
 						LoginError le = new LoginError();
@@ -120,6 +139,9 @@ public class Login extends JFrame {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
