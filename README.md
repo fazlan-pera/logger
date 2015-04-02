@@ -39,7 +39,13 @@ Change configuration.xml file with your datbase credentials. <br /> <br/>
   **package** -- Package of the entry point class of your application <br/>
   **MainUIClass** -- The class name of the entry point UI
 
+#Sample users table
 
+` create table users ( `
+ `id int(11) primary key auto_increment,`
+ `name varchar(50) not null,`
+ `password varchar(256) not null); `
+ 
 #Release
 
 Logger 1.0  https://github.com/fazlan-pera/logger/releases/download/1.0/logger.jar
