@@ -1,8 +1,10 @@
 <?xml version="1.0"?>
 
 <DATABASE>
-<url>jdbc:mysql://localhost/test</url>
-<username>root</username>
-<table>users</table>
-<password>123</password>>
+	<url>jdbc:mysql://localhost/test</url>
+	<username>root</username>
+	<table>users</table>
+	<password>123</password>>
+	<package>com.project.net</package>
+	<MainUIClass>Welcome</MainUIClass>
 </DATABASE>

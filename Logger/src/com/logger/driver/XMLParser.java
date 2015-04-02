@@ -14,9 +14,27 @@ public class XMLParser{
 	private String userName;
 	private String table;
 	private String password;
+	private String pack;
+	private String ui;
 	
 	public String getPassword() {
 		return password;
+	}
+
+	public String getPack() {
+		return pack;
+	}
+
+	public void setPack(String pack) {
+		this.pack = pack;
+	}
+
+	public String getUi() {
+		return ui;
+	}
+
+	public void setUi(String ui) {
+		this.ui = ui;
 	}
 
 	public void setPassword(String password) {
@@ -51,6 +69,8 @@ public class XMLParser{
 				setUserName(eElement.getElementsByTagName("username").item(0).getTextContent());
 				setTable(eElement.getElementsByTagName("table").item(0).getTextContent());
 				setPassword(eElement.getElementsByTagName("password").item(0).getTextContent());
+				setPack(eElement.getElementsByTagName("package").item(0).getTextContent());
+				setUi(eElement.getElementsByTagName("MainUIClass").item(0).getTextContent());
 			}
 		}
 		}catch(Exception e){

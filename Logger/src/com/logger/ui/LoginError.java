@@ -33,6 +33,7 @@ public class LoginError extends JDialog {
 	 * Create the dialog.
 	 */
 	public LoginError() {
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 388, 130);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());
