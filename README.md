@@ -3,7 +3,12 @@ Logger is a portable java library which handles user registration within any jav
 
 # How to use
 
-Download the folder as a zip, and import the project file in eclipse.
+Change configuration.xml file with your datbase credentials.
+ <DATABASE> -- the root tag for database settings
+ <url> -- url of the database used
+ <username> -- database username
+ <table> -- table name
+ <password -- password for database
 
 # Features to be released
 
