@@ -81,9 +81,11 @@ public class Signup extends JFrame {
 				try {
 					byte[] hash = hg.getHash();
 					String password = Arrays.toString(hash);
-					String query = "insert into "+db.getTable()+" VALUES(1,"+ "'"+password+"'"+","+"'"+textField.getText()+"'"+ ")";
+					String query = "insert into "+db.getTable()+" (name,password)"+" VALUES("+"'"+textField.getText()+"'"+","+"'"+password+"'"+ ")";
 					db.setQuery(query) ;
 					db.executeUpdateQuery();
+					SignupSuccessful ss = new SignupSuccessful();
+					ss.setVisible(true);
 				} catch (UnsupportedEncodingException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
