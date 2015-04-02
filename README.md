@@ -1,5 +1,5 @@
 # logger
-Logger is a portable java library which handles user registration within any java desktop application. If you are developing a standalone java application, and you need to handle user logins in a secure way, then "Logger" is your friend. All you have to do is, download the jar file and plug it to your own application. Since passwords are hashed and not stored in plaintext, you don't need to take any extra measure for the securing user passwords on your own.  
+Logger is a portable java library which handles user registration within any java desktop application. If you are developing a standalone java application, and you need to handle user logins in a secure way, then "Logger" is your friend. All you have to do is, download the jar file and plug it to your own application. Since passwords are hashed and not stored in plaintext, you don't need to take any extra measure to secure user passwords on your own.  
 
 
 
