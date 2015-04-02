@@ -9,7 +9,7 @@ You could easily integrate "Logger" in your personal java projects by following 
 
       1) Download the logger.jar file with the matching version.
       2) Add this jar to your project's build path.
-      3) Create a configuration.xml file with your database credentials and other settings.
+      3) Create a configuration.xml file with your database credentials and other settings, and place it in the root folder.
       4) Make sure to set the entry point of your application to com.logger.ui.Login
 
 # Sample configuration.xml file
@@ -38,6 +38,11 @@ Change configuration.xml file with your datbase credentials. <br /> <br/>
   **password** -- password for database <br />
   **package** -- Package of the entry point class of your application <br/>
   **MainUIClass** -- The class name of the entry point UI
+
+
+#Release
+
+Logger 1.0  https://github.com/fazlan-pera/logger/releases/download/1.0/logger.jar
 
 # Features to be released
 
